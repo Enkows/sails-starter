@@ -1,0 +1,10 @@
+#!/bin/sh
+echo 'Copy and compile coffee files...'
+rsync -a --delete-after --exclude-from='.rsync_exclude' ./ test-cov/
+./node_modules/.bin/coffee --bare --compile --output test-cov/ test-cov/
+
+echo 'Launching sails app...'
+./node_modules/.bin/istanbul cover -x '**/lib/**' ./node_modules/.bin/_mocha
+./node_modules/.bin/istanbul report html
+
+echo 'Coverage result in `coverage/index.html`'

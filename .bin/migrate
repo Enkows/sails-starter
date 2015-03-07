@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ $# -lt 1 ]; then
+  ./node_modules/.bin/sails-migrations migrate
+else
+  ./node_modules/.bin/sails-migrations $@
+fi

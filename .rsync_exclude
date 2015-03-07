@@ -1,0 +1,8 @@
+.DS_STORE
+.git
+.idea
+.tmp
+coverage
+docs
+test-cov
+test
