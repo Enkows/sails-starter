@@ -1,0 +1,1 @@
+console.log('Some front-end lib.');
